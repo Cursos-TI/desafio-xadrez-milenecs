@@ -1,15 +1,15 @@
 #include <stdio.h>
 void torre(int casa) {
-    if (casa >= 0 && casa <= 5){
+    if (casa >= 0 && casa <= 5 && casa-0){ 
     printf("Direita \n");
     torre(casa-1);
     }else if (casa < 0 && casa >= 6) {
     printf(" A peca caiu \n");}}
 void rainha(int casas) {
-    if (casas >= 0 && casas <= 8){
-    printf("Esquerda \n");
-    torre(casas-1);
-    }else if (casas < 0 && casas >= 8) {
+    if (casas >= 0 && casas <= 8 && casas-0){
+    printf("%d Esquerda \n", casas);
+    rainha(casas-1);
+    }else if (casas < 0 && casas >= 9) {
     printf(" A peca caiu \n");}}
 int main(){
     int jogador; 
@@ -27,7 +27,7 @@ int main(){
     printf("1. Bispo\n");
     printf("2. Torre\n");
     printf("3. Rainha\n");
-        printf("4. Cavalo\n");
+    printf("4. Cavalo\n");
     printf("5. Voltar\n");
     scanf(" %d", &jogador); 
     switch (jogador){
@@ -47,18 +47,22 @@ int main(){
     rainha(casas);
     break;
     case 4:
-    printf("Quantas Casas Voce Gostaria De Mover o Cavalo para baixo? \n");
+    printf("Quantas Casas Voce Gostaria De Mover o Cavalo para cima? \n");
     scanf("%d", &casas);
     for (int i = 1; i <= casas; i++) {
     if (i == 1){
-    printf("Cavalo moveu %d casas para baixo\n", i);
+    printf("Cavalo moveu %d casas para cima\n", i);
     }else if (i == 2){
-    printf ("Cavalo moveu %d casas para baixo\n", i);}}
-    printf("Quantas Casas Voce Gostaria De Mover o Cavalo para a vetical? \n");
+    printf ("Cavalo moveu %d casas para cima\n", i);}
+    else if (i < 0 || i >= 3){
+    printf ("Sem roubar, Sao no maximo 2 casa");}}
+    printf("Quantas Casas Voce Gostaria De Mover o Cavalo para a direita? \n");
     scanf("%d", &casas);
     for (int i = 1; i <= casas; i++) {
-    if (i == 1){ printf("Cavalo moveu %d casas para vetical\n", i);
-    }else if (i == 2){printf ("Cavalo moveu %d casas para vetical\n", i);}}
+    if (i == 1){ printf("Cavalo moveu %d casas para direita\n", i);
+    }else if (i == 2){printf ("Cavalo moveu %d casas para direita\n", i);}
+    else if (i < 0 || i >= 3){
+    printf ("Sem roubar, Sao no maximo 2 casa");}}
     break;
     }
     } while (jogador != 5);
@@ -66,7 +70,9 @@ int main(){
     break;
     case 2:
     printf("** As Regras do jogo sao:\n O Bispo pode se mover ate 5 casas nas diagonais.\n A Torre pode se mover ate 5 na horizontal e vertical.\n A Rainha pode se mover 8 casa e em qualquer direcao.\n");
-    printf(" O Cavalo se movimenta em L, uma casa para cima ou para baixo na vertical e mais de duas casas na horizontal OU duas casas para cima ou para baixo na vertical e mais uma casa na horizontal\n ");
+    printf(" O Cavalo se movimenta em L, uma casa para cima ou para baixo na vertical e \n mais de duas casas na horizontal OU duas casas para cima ou para baixo na vertical e mais uma casa na horizontal\n ");
+    printf ("Digite 3 para voltar\n");
+    scanf("%d", &casas);
     break;
     case 3:
     printf("Ate mais...\n"); 
@@ -76,5 +82,5 @@ int main(){
     break;
     }
     } while (jogador != 3);
-    printf("Numero invalido\n");
+    printf("\n");
 }
