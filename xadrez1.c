@@ -82,4 +82,5 @@ int main(){
     }
     } while (jogador != 3);
     printf("\n");
+    return 0;
 }
