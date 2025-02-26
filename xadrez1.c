@@ -18,9 +18,9 @@ void cavalo(){
     printf("Quantas casas para a direita? (1 ou 2)\n");
     scanf("%d", &casasd);
     if (casasc == 1 && casasd == 2){
-    printf("1 cima \n1 Direita \n2 Direita \n");
+    printf("Cima \nDireita \nDireita \n");
     } else if (casasc == 2 && casasd == 1){
-    printf("1 cima \n2 cima \n1 Direita \n");}
+    printf("Cima \nCima \nDireita \n");}
     else {
         printf("Assim nao vai, vamos tentar de novo \n");}
 }
